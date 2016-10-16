@@ -32,7 +32,7 @@ namespace todoList.Client
             this.Suspending += OnSuspending;
         }
 
-        public static string BaseUrl { get; internal set; }
+        public const string BaseUrl = "http://localhost:57672/";
 
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points

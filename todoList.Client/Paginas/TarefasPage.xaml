@@ -17,7 +17,7 @@
                 RelativePanel.AlignRightWithPanel="True"
                 RelativePanel.AlignTopWithPanel="True"
                 >
-                <ListBox Name="lstDados">
+                <ListBox Name="lstDados" SelectionChanged="lstDados_SelectionChanged">
                     <ListBox.ItemTemplate>
                         <DataTemplate>
                             <RelativePanel HorizontalAlignment="Stretch"

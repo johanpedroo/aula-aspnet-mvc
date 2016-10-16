@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using todoList.Client.Logic;
 using todoList.Client.Model;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -22,7 +24,7 @@ namespace todoList.Client.Paginas
 
         private async void Page_Loaded(object sender, RoutedEventArgs e)
         {
-            lista = new List<Tarefa>();
+            /*lista = new List<Tarefa>();
             for (int i = 0; i < 10; i++)
             {
                 var t = new Tarefa
@@ -36,9 +38,32 @@ namespace todoList.Client.Paginas
                 };
 
                 lista.Add(t);
+            }*/
+
+            try
+            {
+                lista = await TarefasRequestApi.ListarAsync();
+
+                lstDados.ItemsSource = lista;
+            }
+            catch (Exception ex)
+            {
+                var msg = TratarException.ErrorMessage(ex);
+
+                var dialog = new MessageDialog(msg, "ooopsss...");
+                await dialog.ShowAsync();
             }
 
             lstDados.ItemsSource = lista;
+        }
+
+        private void lstDados_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var listBox = sender as ListBox;
+
+            var tarefa = listBox.SelectedItem as Tarefa;
+
+            Frame.Navigate(typeof(NovaTarefaPage), tarefa);
         }
     }
 }

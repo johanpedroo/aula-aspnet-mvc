@@ -99,6 +99,7 @@
     <Compile Include="Logic\LoginRequestApi.cs" />
     <Compile Include="Logic\MyLocalStorage.cs" />
     <Compile Include="Logic\NovoUsuarioRequestApi.cs" />
+    <Compile Include="Logic\TarefasRequestApi.cs" />
     <Compile Include="Logic\TratarException.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
