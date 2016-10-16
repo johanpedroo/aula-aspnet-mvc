@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="todoList.Client.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:todoList.Client"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Loaded="Page_Loaded">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <ScrollViewer>
+            <Grid Background="SteelBlue" MinHeight="640">
+                <RelativePanel Margin="20,50" 
+                Background="LightBlue" 
+                ScrollViewer.VerticalScrollMode="Enabled">
+                    <StackPanel 
+                    Margin="10,10,10,10" 
+                    HorizontalAlignment="Stretch"
+                    RelativePanel.AlignHorizontalCenterWithPanel="True" 
+                    RelativePanel.AlignVerticalCenterWithPanel="True" 
+                    RelativePanel.AlignRightWithPanel="True" 
+                    RelativePanel.AlignLeftWithPanel="True">
+                        <TextBlock Text="Login"
+                        FontSize="70" 
+                        HorizontalAlignment="Center"
+                        Foreground="DarkSlateBlue"/>
+                        <TextBox Name="txtLogin" 
+                        FontSize="30" 
+                        Height="50" 
+                        Margin="0,0,0,30"/>
+                        <TextBlock Text="Senha"
+                        FontSize="70" 
+                        HorizontalAlignment="Center"
+                        Foreground="DarkSlateBlue" />
+                        <PasswordBox Name="txtPassword" 
+                        FontSize="30" 
+                        Height="50" 
+                        Margin="0,0,0,30"/>
+                        <Button Name="btnLogin" 
+                        Content="Go"
+                        FontSize="40" 
+                        HorizontalAlignment="Center"
+                        Width="200" 
+                        Background="SteelBlue"
+                        Foreground="LightBlue"
+                        Click="btnLogin_Click"/>
+                        <Button Name="btnNovo" 
+                        Content="Ainda não tem conta?"
+                        FontSize="20" 
+                        HorizontalAlignment="Center"
+                        Width="300" 
+                        Background="SteelBlue"
+                        Foreground="LightBlue"
+                        Click="btnNovo_Click"
+                        Margin="0,20,0,0"/>
+                    </StackPanel>
+                </RelativePanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</Page>
